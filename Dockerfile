@@ -17,5 +17,7 @@ RUN npm install
 # Add source code into our image
 COPY . /app
 
+EXPOSE 3000
+
 # Command to run when image is run inside container
 CMD [ "npm", "start" ]
