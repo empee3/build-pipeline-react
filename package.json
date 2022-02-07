@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "webpack": "webpack",
     "lint": "run-s lint:js",
-    "lint:js": "eslint --ext .ts,.tsx",
+    "lint:js": "eslint --ext .ts,.tsx src/components",
     "test": "jest",
     "eject": "react-scripts eject"
   },
