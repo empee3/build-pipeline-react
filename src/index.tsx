@@ -1,5 +1,5 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import Counter from './components/Counter';
 import ShowLogo from './components/ShowLogo';
 
@@ -9,5 +9,5 @@ ReactDOM.render(
     <Counter />
     <ShowLogo />
   </div>,
-  document.getElementById("root")
+  document.getElementById('root')
 );

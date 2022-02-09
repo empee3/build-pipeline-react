@@ -1,0 +1,8 @@
+version: "2"
+
+plugins:     
+  stylelint:
+    enabled: true
+  tslint:
+    enabled: true
+    config: tslint.json

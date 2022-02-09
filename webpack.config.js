@@ -1,4 +1,6 @@
 const path = require('path');
+const dartSass = require('sass');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
@@ -11,6 +13,9 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new MiniCssExtractPlugin(),
+  ],
   mode: 'development',
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],

@@ -20,4 +20,4 @@ COPY . /app
 EXPOSE 3000
 
 # Command to run when image is run inside container
-CMD [ "npm", "start" ]
+CMD ["npm", "start"]
