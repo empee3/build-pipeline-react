@@ -14,6 +14,8 @@ COPY package*.json /app
 # Execute npm install
 RUN npm install
 
+RUN npm rebuild node-sass
+
 # Add source code into our image
 COPY . /app
 
