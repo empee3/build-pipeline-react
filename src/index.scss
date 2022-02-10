@@ -1,0 +1,13 @@
+$heading-color: #00008b;
+$font-stack: "Arial, sans-serif";
+
+.h1 {
+  color: $heading-color;
+  font-family: $font-stack;
+}
+
+.root {
+  margin: 0 auto;
+  max-width: 1600px;
+  width: 100%;
+}
