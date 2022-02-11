@@ -1,0 +1,47 @@
+on:
+  push:
+    branches:
+      - "main"
+    tags:
+      - "v*.*.*"
+  pull_request:
+    branches:
+      - "main"
+
+jobs:
+  build-distribution:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Lint SCSS and JavaScript/TypeScript
+        run: npm run lint
+
+      - name: Run JavaScript Tests
+        run: npm run test
+
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v3
+        with:
+          images: build-pipeline-react/app
+      
+      - name: Login to DockerHub
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
