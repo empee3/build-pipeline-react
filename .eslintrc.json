@@ -24,6 +24,10 @@
     "rules": {
         "no-param-reassign": [0, { "props": false }],
         "no-console": 2,
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }]
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+        "react/state-in-constructor": 0,
+        "react/destructuring-assignment": 0,
+        "react/function-component-definition": 0,
+        "react/no-access-state-in-setstate": 0
     }
 }

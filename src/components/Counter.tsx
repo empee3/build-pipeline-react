@@ -15,15 +15,14 @@ export default class Counter extends React.Component {
     this.setState({
       count: (this.state.count - 1),
     });
-    console.log("This should break the linter");
   };
 
-  render () {
+  render() {
     return (
       <div>
         <h1>{this.state.count}</h1>
-        <button onClick={this.increment}>Increment</button>
-        <button onClick={this.decrement}>Decrement</button>
+        <button type="button" onClick={this.increment}>Increment</button>
+        <button type="button" onClick={this.decrement}>Decrement</button>
       </div>
     );
   }
