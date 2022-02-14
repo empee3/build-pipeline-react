@@ -25,7 +25,7 @@
     "webpack": "webpack",
     "lint": "run-s lint:js lint:css",
     "lint:js": "eslint --ext .ts,.tsx src/components",
-    "lint:css": "stylelint src/scss/*.scss src/scss/**/*.scss --color --formatter verbose",
+    "lint:css": "stylelint src/*.scss src/**/*.scss --color --formatter verbose",
     "test": "jest",
     "eject": "react-scripts eject"
   },
