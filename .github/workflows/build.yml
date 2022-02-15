@@ -11,6 +11,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-18.04
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -50,3 +52,11 @@ jobs:
           
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
+
+      - name: Slack notification
+        uses: act10ns/slack@v1
+        with:
+          status: ${{ job.status }}
+          steps: ${{ toJson(steps) }}
+          channel: '#exploring-cohort-notifications'
+        if: always()
