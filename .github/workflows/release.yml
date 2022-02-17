@@ -10,15 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Build the CSS files
-        run: npm run webpack
-
+  
       - name: Create release artifact
         uses: thedoctor0/zip-release@master
         with:
