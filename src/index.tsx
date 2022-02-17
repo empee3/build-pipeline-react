@@ -10,5 +10,5 @@ ReactDOM.render(
     <Counter />
     <ShowLogo />
   </div>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
