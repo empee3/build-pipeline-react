@@ -6,9 +6,9 @@ import './index.scss';
 
 ReactDOM.render(
   <div className="root">
-    <h1 className="h1">Hello, Welcome to React and TypeScript</h1>
-    <Counter />
+    <h1 className="h1">Hello, Welcome to React and TypeScript Demo</h1>
     <ShowLogo />
+    <Counter />
   </div>,
   document.getElementById('root'),
 );
